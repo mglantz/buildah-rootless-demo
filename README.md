@@ -1,4 +1,4 @@
-# buildah/podman rootless-demo when dealing with micro containers
+# buildah/podman rootless-demo with micro containers
 A demonstration of how you can use podman and buildah to create containers without root, when using ubi-micro containers.
 
 This demo was created using Fedora 37.
