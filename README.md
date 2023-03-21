@@ -9,12 +9,12 @@ Installing podman and buildah.
 dnf install podman buildah
 ```
 
-# Creating a container
-The container is based on Red Hat's Universal Base Image and the special micro format. Micro containers do not come with the normal package managers, something we want to avoid anyways due to security risks.
+# Creating a container a tiny container
+The container we will build is based on Red Hat's Universal Base Image and the special micro format. Micro containers do not come with the normal package managers, something we want to avoid anyways due to security risks. UBI-micro containers are small, as an example, ubi9/ubi-micro is only 7.3 MB compressed.
 
-## The challenge
-To build container without package managers we instead copy files into a directory which buildah creates a container from.
-The challenge is that the buildah mount function normally is not rootless. In order to make it rootless, we create a build script, which does the building and we then use `buildah unshare` or `podman unshare` on that script. That launches you into a namespace which fools the system into thinking we are root, when we are not.
+## The challenge and the solution
+To build a container without package managers we instead copy files into a rootfs directory which buildah creates the container from.
+The challenge is that the buildah mount function, used to create the rootfs directory is not rootless. In order to make it rootless, we create a build script, which does the building and we then use `buildah unshare` or `podman unshare` on that script. That launches the script into a namespace which makes it appear that we are root, when we are not.
 
 ## Building the container
 1. To build a container which runs Apache web server, copy below script and name it rootless-rules.sh.
