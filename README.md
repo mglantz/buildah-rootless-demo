@@ -9,7 +9,7 @@ Installing podman and buildah.
 dnf install podman buildah
 ```
 
-# Creating a container a tiny container
+# Creating a tiny container
 The container we will build will be based on either Red Hat's Universal Base Image and the special micro format or be built from scratch based on Fedora.
 
 Micro containers do not come with the normal package managers, something we want to avoid anyways due to security risks. UBI-micro containers are small, as an example, [ubi9/ubi-micro](https://catalog.redhat.com/software/containers/ubi9/ubi-micro/615bdf943f6014fa45ae1b58) is only 7.3 MB compressed.
@@ -26,6 +26,8 @@ Below we'll walk through building a working OCI container running the Apache web
 
 * Building a container using the Micro version of Universal Base Image 9
 * Building a container from scratch, using Fedora.
+
+In our example, building a container for Apache webserver, it should be noted that there is only 20 MB difference between ubi9/micro and building from scratch using Fedora 37. UBI 9 is maintained and supported by Red Hat.
 
 ## Building a container using Universal Base Image 9 - Micro
 1. To build a container which runs Apache web server, based on Red Hat's Universal Build Image, copy below script and name it rootless-rules.sh.
