@@ -14,7 +14,7 @@ The container is based on Red Hat's Universal Base Image and the special micro f
 
 ## The challenge
 To build container without package managers we instead copy files into a directory which buildah creates a container from.
-The challenge is that the buildah mount function normally is not rootless. In order to make it rootless, we create a build script, which does the building and we then use `buildah unshare` on that script. That command will fool the system into thinking we are root, when we are not.
+The challenge is that the buildah mount function normally is not rootless. In order to make it rootless, we create a build script, which does the building and we then use `buildah unshare` or `podman unshare` on that script. That launches you into a namespace which fools the system into thinking we are root, when we are not.
 
 ## Building the container
 1. To build a container which runs Apache web server, copy below script and name it rootless-rules.sh.
@@ -39,8 +39,10 @@ buildah config --entrypoint '/usr/sbin/httpd -D FOREGROUND' --port 80 $ctr
 # Commit it to local
 buildah commit $ctr dev/httpd-ubi9-micro
 ```
-2. Now run `buildah unshare` on the script.
+2. Now run `buildah unshare` or `podman unshare` on the script.
 ```
+podman unshare rootless-rules.sh
+# or
 buildah unshare rootless-rules.sh
 ```
 
