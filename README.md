@@ -82,7 +82,7 @@ $
 
 ## Building a container from scratch
 
-1. To build a container which runs Apache web server from scratch, based on Fedora, copy below script and name it rootless-rules.sh.
+1. To build a container which runs Apache web server from scratch, based on Fedora 37, copy below script and name it rootless-rules.sh.
 ```
 #!/bin/sh
 
