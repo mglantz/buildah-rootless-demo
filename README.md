@@ -25,6 +25,7 @@ The challenge is that the buildah mount function normally is not rootless. In or
 ctr=$(buildah from registry.redhat.io/ubi9/ubi-micro)
 mnt=$(buildah mount $ctr)
 
+# Install Apache and configure the landing page
 dnf -y install --installroot $mnt httpd
 echo "Never use root to build containers" >$mnt/var/www/html/index.html
 
@@ -32,7 +33,7 @@ echo "Never use root to build containers" >$mnt/var/www/html/index.html
 rm -rf $mnt/var/cache
 rm $mnt/var/log/* 2>/dev/null
 
-# Set ENTRYPOINT
+# Set ENTRYPOINT and EXPOSE port.
 buildah config --entrypoint '/usr/sbin/httpd -D FOREGROUND' --port 80 $ctr
 
 # Commit it to local
