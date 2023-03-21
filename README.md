@@ -68,3 +68,7 @@ $ curl localhost:8080
 Never use root to build containers
 $
 ```
+
+## Read more
+* To learn more about podman/buildah unshare, checkout the `podman-unshare(1)` man page.
+* To learn more about rootless builds, checkout Dan Walsh's blogpost, here: https://opensource.com/article/19/3/tips-tricks-rootless-buildah
