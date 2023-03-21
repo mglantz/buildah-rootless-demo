@@ -10,7 +10,7 @@ dnf install podman buildah
 ```
 
 # Creating a container a tiny container
-The container we will build is based on Red Hat's Universal Base Image and the special micro format. Micro containers do not come with the normal package managers, something we want to avoid anyways due to security risks. UBI-micro containers are small, as an example, ubi9/ubi-micro is only 7.3 MB compressed.
+The container we will build is based on Red Hat's Universal Base Image and the special micro format. Micro containers do not come with the normal package managers, something we want to avoid anyways due to security risks. UBI-micro containers are small, as an example, [ubi9/ubi-micro](https://catalog.redhat.com/software/containers/ubi9/ubi-micro/615bdf943f6014fa45ae1b58) is only 7.3 MB compressed.
 
 ## The challenge and the solution
 To build a container without package managers we instead copy files into a rootfs directory which buildah creates the container from.
@@ -70,5 +70,6 @@ $
 ```
 
 ## Read more
-* To learn more about podman/buildah unshare, checkout the `podman-unshare(1)` man page.
-* To learn more about rootless builds, checkout Dan Walsh's blogpost, here: https://opensource.com/article/19/3/tips-tricks-rootless-buildah
+* To learn more about podman/buildah unshare, checkout the [podman-unshare(1) man page](https://docs.podman.io/en/latest/markdown/podman-unshare.1.html).
+* To learn more about rootless builds, [checkout Dan Walsh's blogpost, here.](https://opensource.com/article/19/3/tips-tricks-rootless-buildah)
+* [Red Hat UBI 9 container](https://catalog.redhat.com/software/containers/ubi9/ubi-micro/615bdf943f6014fa45ae1b58)
