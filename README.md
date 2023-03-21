@@ -22,7 +22,7 @@ The challenge is that the buildah mount function normally is not rootless. In or
 #!/bin/sh
 
 # Fetch container and mount it
-ctr=$(buildah from ubi9/ubi-micro)
+ctr=$(buildah from registry.redhat.io/ubi9/ubi-micro)
 mnt=$(buildah mount $ctr)
 
 dnf -y install --installroot $mnt httpd
