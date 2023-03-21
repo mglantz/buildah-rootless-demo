@@ -1,5 +1,5 @@
 # buildah-rootless-demo
-A demonstration of how you can use buildah to create containers without root using ubi-micro.
+A demonstration of how you can use buildah to create containers without root, when using ubi-micro containers.
 
 This demo was created using Fedora 37.
 
