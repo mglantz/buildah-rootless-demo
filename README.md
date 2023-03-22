@@ -50,7 +50,7 @@ rm $mnt/var/log/* 2>/dev/null
 buildah config --entrypoint '/usr/sbin/httpd -D FOREGROUND' --port 80 $ctr
 
 # Commit it to local
-buildah commit $ctr dev/httpd-ubi9-micro
+buildah commit $ctr dev/httpd-ubi9-micro:v1
 ```
 2. Now run `buildah unshare` or `podman unshare` on the script.
 ```
