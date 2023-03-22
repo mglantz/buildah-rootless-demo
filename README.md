@@ -95,7 +95,7 @@ mnt=$(buildah mount $ctr)
 # Install web server and configure index.html
 dnf -y install --installroot $mnt --releasever 37 bash coreutils --setopt install_weak_deps=false
 dnf -y install --installroot $mnt httpd
-echo "Foo Cafe rules!" >$mnt/var/www/html/index.html
+echo "Never use root to build containers" >$mnt/var/www/html/index.html
 
 # Cleanup
 rm -rf $mnt/var/cache
