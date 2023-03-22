@@ -27,7 +27,7 @@ Below we'll walk through building a working OCI container running the Apache web
 * Building a container using the Micro version of Universal Base Image 9
 * Building a container from scratch, using Fedora.
 
-In our example, building a container for Apache webserver, it should be noted that there is only 20 MB difference between ubi9/micro and building from scratch using Fedora 37. UBI 9 is maintained and supported by Red Hat.
+In our example, building a container for Apache webserver, it should be noted that there is only 20 MB difference between ubi9/micro and building from scratch using Fedora 37. UBI 9 is maintained and supported by Red Hat and is based on Red Hat Enterprise Linux 9, the latest version of Red Hat's Enterprise Linux operating system.
 
 ## Building a container using Universal Base Image 9 - Micro
 1. To build a container which runs Apache web server, based on Red Hat's Universal Build Image, copy below script and name it rootless-rules.sh.
