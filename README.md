@@ -66,7 +66,7 @@ podman images
 
 4. Run the container
 ```
-podman run --name microhttpd -d -p 8080:80 dev/httpd-ubi9-micro
+podman run --name microhttpd -d -p 8080:80 dev/httpd-ubi9-micro:v1
 ```
 
 5. Check so that the container is running.
@@ -122,7 +122,7 @@ podman images
 
 4. Run the container
 ```
-podman run --name scratchhttpd -d -p 8080:80 dev/httpd-scratch
+podman run --name scratchhttpd -d -p 8080:80 dev/httpd-scratch:v1
 ```
 
 5. Check so that the container is running.
